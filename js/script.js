@@ -59,4 +59,49 @@
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") closeModal();
   });
+
+  /* ---- Contact form: AJAX submit to Netlify Forms ---- */
+  var form = document.getElementById("contact-form");
+  var status = document.getElementById("form-status");
+
+  function encode(data) {
+    return Object.keys(data)
+      .map(function (key) {
+        return encodeURIComponent(key) + "=" + encodeURIComponent(data[key]);
+      })
+      .join("&");
+  }
+
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var formData = new FormData(form);
+      var payload = {};
+      formData.forEach(function (value, key) {
+        payload[key] = value;
+      });
+
+      status.textContent = "Sending…";
+      status.classList.remove("is-error");
+
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode(payload)
+      })
+        .then(function (response) {
+          if (response.ok) {
+            status.textContent = "Thanks — your message is on its way. I'll get back to you soon.";
+            form.reset();
+          } else {
+            throw new Error("Submission failed");
+          }
+        })
+        .catch(function () {
+          status.textContent = "Something went wrong. Please email me directly instead.";
+          status.classList.add("is-error");
+        });
+    });
+  }
 })();
