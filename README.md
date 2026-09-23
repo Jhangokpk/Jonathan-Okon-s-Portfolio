@@ -29,6 +29,15 @@ Clicking an experience entry or a credential tile opens an in-page dialog (no na
   3. Set the "to" address to `jonathaneyookon@gmail.com` and save.
   4. From then on, every submission emails you automatically.
 
+### Credentials
+
+Each item in the Credentials dialogs now links to the real certificate PDF (in `assets/certificates/`) — clicking downloads it directly, no "email me" needed.
+
+Two items from the earlier draft aren't included, since they couldn't be verified against a file in what you uploaded:
+- **Professional Etiquette** — listed on your résumé, but no certificate file was in the upload. Add it back into the Foundational list in `index.html` (and drop the file into `assets/certificates/`) if you have it elsewhere.
+- **GSA XVII Certificate** (Green Switch Academy / Plogging Nigeria) — a sustainability-program certificate of participation, not HR/admin-related, so it didn't fit this site's focus. It's still in your original upload if you want it for a different context.
+
+
 ## Push to GitHub
 
 ```bash
@@ -58,7 +67,6 @@ git push -u origin main
 - [ ] Swap in a custom domain, or set a nicer Netlify subdomain under **Site settings → Domain management**
 - [ ] Double-check `mailto:`, `wa.me`, and `tel:` links in `index.html` if your email or number ever changes
 - [ ] Turn on the email notification for the contact form (see above) — it's off by default until you set it
-- [ ] Swap in real certificate files or a shared-drive link once you have somewhere to host the actual PDFs (the credential dialogs currently list titles only, grouped by issuer)
 - [ ] Update `<meta name="description">` in `index.html` if your focus changes
 - [ ] If the deployed URL ever changes from `jonathan-okon-portfolio.netlify.app`, update the `og:url` / `og:image` / `twitter:image` meta tags in `index.html` to match, or link previews will point at the old URL
 
