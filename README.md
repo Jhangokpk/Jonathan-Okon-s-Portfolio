@@ -14,7 +14,18 @@ portfolio/
 └── README.md
 ```
 
-Clicking an experience entry or a credential tile opens an in-page dialog (no navigation away from the site). "Get in touch" opens a contact dialog with email, WhatsApp, and phone.
+Clicking an experience entry or a credential tile opens an in-page dialog (no navigation away from the site). The Contact section lists email, WhatsApp, and phone directly, and includes a message form.
+
+### How contact works
+
+- **Email** — a `mailto:` link. Opens the visitor's own mail app, addressed to Jonathan.
+- **WhatsApp** — a `wa.me` link with a pre-filled message ("Hello Jonathan, my name is ____..."). It opens WhatsApp with that text already in the box — WhatsApp itself never allows a link to send automatically, so the visitor still taps Send.
+- **Call** — a `tel:` link, dials on mobile / opens the desktop calling app.
+- **Message form** — wired to **Netlify Forms**. No backend code needed, but it only works once the site is deployed on Netlify (not on `file://`, not on GitHub Pages). One-time setup after your first deploy:
+  1. Netlify dashboard → your site → **Forms**. You should see a form named `contact` appear after the first deploy.
+  2. **Settings → Forms → Form notifications → Add notification → Email notification**.
+  3. Set the "to" address to `jonathaneyookon@gmail.com` and save.
+  4. From then on, every submission emails you automatically.
 
 ## Push to GitHub
 
@@ -43,9 +54,12 @@ git push -u origin main
 ## Before you go live
 
 - [ ] Swap in a custom domain, or set a nicer Netlify subdomain under **Site settings → Domain management**
-- [ ] Double-check `mailto:` and `wa.me` links in `index.html` if your email or number ever changes
+- [ ] Double-check `mailto:`, `wa.me`, and `tel:` links in `index.html` if your email or number ever changes
+- [ ] Turn on the email notification for the contact form (see above) — it's off by default until you set it
 - [ ] Swap in real certificate files or a shared-drive link once you have somewhere to host the actual PDFs (the credential dialogs currently list titles only, grouped by issuer)
 - [ ] Update `<meta name="description">` in `index.html` if your focus changes
+
+Note on icons: the mail, WhatsApp, and phone icons in the Contact section are simple line/glyph icons Claude drew to represent each channel — not the official trademarked WhatsApp logo. Swap in official brand assets yourself if you'd prefer exact logos.
 
 ## Editing content
 
