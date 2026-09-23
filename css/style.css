@@ -213,6 +213,53 @@ section h2{
 .competency-col ul li:last-child{ border-bottom:none; }
 
 /* ==========================================================
+   Recommendation pull-quote
+   ========================================================== */
+.recommendation{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  text-align:center;
+  padding-top:clamp(56px,8vw,88px);
+  padding-bottom:clamp(56px,8vw,88px);
+}
+.recommendation blockquote{
+  margin:0 auto;
+  max-width:64ch;
+}
+.recommendation blockquote p{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:clamp(1.25rem,2.6vw,1.7rem);
+  line-height:1.45;
+  color:var(--paper);
+  margin:0;
+}
+.recommendation-attribution{
+  margin-top:28px;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+.recommendation-name{
+  color:var(--gold);
+  font-size:0.95rem;
+}
+.recommendation-role{
+  color:var(--paper-dim);
+  font-size:0.85rem;
+}
+.recommendation-link{
+  display:inline-block;
+  margin-top:20px;
+  color:var(--gold);
+  font-size:0.88rem;
+  text-decoration:none;
+  border-bottom:1px solid var(--gold-soft);
+  padding-bottom:2px;
+}
+.recommendation-link:hover, .recommendation-link:focus-visible{ color:#dcb75e; }
+
+/* ==========================================================
    Experience timeline
    ========================================================== */
 .timeline{ border-top:1px solid var(--line); }

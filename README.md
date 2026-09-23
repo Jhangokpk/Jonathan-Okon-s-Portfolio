@@ -8,8 +8,10 @@ portfolio/
 ├── css/style.css
 ├── js/script.js
 ├── assets/
-│   ├── jonathan-okon.jpg      (headshot)
-│   └── Jonathan-Okon-Resume.pdf
+│   ├── jonathan-okon.jpg          (headshot)
+│   ├── Jonathan-Okon-Resume.pdf
+│   ├── Recommendation-Letter.pdf
+│   └── og-image.jpg               (link-preview image for social shares)
 ├── netlify.toml
 └── README.md
 ```
@@ -21,7 +23,7 @@ Clicking an experience entry or a credential tile opens an in-page dialog (no na
 - **Email** — a `mailto:` link. Opens the visitor's own mail app, addressed to Jonathan.
 - **WhatsApp** — a `wa.me` link with a pre-filled message ("Hello Jonathan, my name is ____..."). It opens WhatsApp with that text already in the box — WhatsApp itself never allows a link to send automatically, so the visitor still taps Send.
 - **Call** — a `tel:` link, dials on mobile / opens the desktop calling app.
-- **Message form** — wired to **Netlify Forms**. No backend code needed, but it only works once the site is deployed on Netlify (not on `file://`, not on GitHub Pages). One-time setup after your first deploy:
+- **Message form** — wired to **Netlify Forms**, with Netlify's built-in reCAPTCHA (no Google account needed — Netlify provides the keys automatically once it detects `data-netlify-recaptcha="true"` in the deployed HTML). No backend code needed, but it only works once the site is deployed on Netlify (not on `file://`, not on GitHub Pages). One-time setup after your first deploy:
   1. Netlify dashboard → your site → **Forms**. You should see a form named `contact` appear after the first deploy.
   2. **Settings → Forms → Form notifications → Add notification → Email notification**.
   3. Set the "to" address to `jonathaneyookon@gmail.com` and save.
@@ -58,6 +60,7 @@ git push -u origin main
 - [ ] Turn on the email notification for the contact form (see above) — it's off by default until you set it
 - [ ] Swap in real certificate files or a shared-drive link once you have somewhere to host the actual PDFs (the credential dialogs currently list titles only, grouped by issuer)
 - [ ] Update `<meta name="description">` in `index.html` if your focus changes
+- [ ] If the deployed URL ever changes from `jonathan-okon-portfolio.netlify.app`, update the `og:url` / `og:image` / `twitter:image` meta tags in `index.html` to match, or link previews will point at the old URL
 
 Note on icons: the mail, WhatsApp, and phone icons in the Contact section are simple line/glyph icons Claude drew to represent each channel — not the official trademarked WhatsApp logo. Swap in official brand assets yourself if you'd prefer exact logos.
 

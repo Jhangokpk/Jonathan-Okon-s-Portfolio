@@ -34,6 +34,24 @@
     }
   }
 
+  var FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+  function trapFocus(e) {
+    if (!activeModal || e.key !== "Tab") return;
+    var focusable = activeModal.querySelectorAll(FOCUSABLE);
+    if (!focusable.length) return;
+    var first = focusable[0];
+    var last = focusable[focusable.length - 1];
+
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
+
   openTriggers.forEach(function (el) {
     el.addEventListener("click", function () {
       openModal(el.getAttribute("data-open-modal"));
@@ -58,6 +76,7 @@
 
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") closeModal();
+    trapFocus(e);
   });
 
   /* ---- Contact form: AJAX submit to Netlify Forms ---- */
@@ -75,6 +94,15 @@
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+
+      if (window.grecaptcha) {
+        var recaptchaResponse = window.grecaptcha.getResponse();
+        if (!recaptchaResponse) {
+          status.textContent = "Please complete the \u201cI'm not a robot\u201d check before sending.";
+          status.classList.add("is-error");
+          return;
+        }
+      }
 
       var formData = new FormData(form);
       var payload = {};
@@ -94,6 +122,7 @@
           if (response.ok) {
             status.textContent = "Thanks — your message is on its way. I'll get back to you soon.";
             form.reset();
+            if (window.grecaptcha) window.grecaptcha.reset();
           } else {
             throw new Error("Submission failed");
           }

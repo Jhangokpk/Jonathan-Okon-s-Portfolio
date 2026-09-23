@@ -5,6 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jonathan Okon — HR &amp; Administrative Support</title>
 <meta name="description" content="Jonathan 'Pandaa' Okon — HR and Administrative Support professional based in Abuja, Nigeria. Recruitment coordination, project logistics, executive support.">
+
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Jonathan Okon">
+<meta property="og:title" content="Jonathan Okon — HR & Administrative Support">
+<meta property="og:description" content="HR and Administrative Support professional based in Abuja, Nigeria. Recruitment coordination, project logistics, executive support.">
+<meta property="og:image" content="https://jonathan-okon-portfolio.netlify.app/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://jonathan-okon-portfolio.netlify.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jonathan Okon — HR & Administrative Support">
+<meta name="twitter:description" content="HR and Administrative Support professional based in Abuja, Nigeria. Recruitment coordination, project logistics, executive support.">
+<meta name="twitter:image" content="https://jonathan-okon-portfolio.netlify.app/assets/og-image.jpg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%23c9a24a%22>J</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -83,6 +96,18 @@
         </ul>
       </div>
     </div>
+  </section>
+
+  <!-- RECOMMENDATION -->
+  <section class="recommendation" id="recommendation">
+    <blockquote>
+      <p>&ldquo;Mr. Okon consistently demonstrated the ability to manage responsibilities autonomously. He showed a good understanding of planning, coordination, and execution of tasks assigned to him&nbsp;&hellip; He consistently collaborated effectively with team members, maintained a high degree of professionalism in all interactions, and displayed an unwavering dedication to continuous learning.&rdquo;</p>
+    </blockquote>
+    <div class="recommendation-attribution">
+      <span class="recommendation-name">Engr. Odinaka Agubata</span>
+      <span class="recommendation-role">Project Engineer, EM-ONE Energy Solutions — onsite supervisor</span>
+    </div>
+    <a class="recommendation-link" href="assets/Recommendation-Letter.pdf" download>Read the full letter</a>
   </section>
 
   <!-- EXPERIENCE -->
@@ -209,7 +234,7 @@
         </li>
       </ul>
 
-      <form class="contact-form" id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="company">
+      <form class="contact-form" id="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="company">
         <input type="hidden" name="form-name" value="contact">
         <p class="hidden-field"><label>Don't fill this out if you're human: <input name="company"></label></p>
 
@@ -225,6 +250,8 @@
           <span>Message</span>
           <textarea name="message" rows="4" required></textarea>
         </label>
+
+        <div data-netlify-recaptcha="true"></div>
 
         <button class="btn btn-gold" type="submit">Send message</button>
         <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
@@ -382,6 +409,7 @@
   <p>University of Abuja (Yakubu Gowon University), Nigeria — completed 2025.</p>
 </div>
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="js/script.js"></script>
 </body>
 </html>
