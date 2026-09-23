@@ -492,6 +492,26 @@ section h2{
   font-size:0.95rem;
 }
 .modal ul li:last-child{ border-bottom:none; }
+.cert-list li{ padding:0; }
+.cert-list li a{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:12px 2px;
+  color:var(--paper);
+  text-decoration:none;
+}
+.cert-list li a::after{
+  content:"Download";
+  flex:none;
+  font-size:0.76rem;
+  color:var(--gold-soft);
+  border:1px solid var(--line);
+  padding:3px 8px;
+}
+.cert-list li a:hover, .cert-list li a:focus-visible{ color:var(--gold); }
+.cert-list li a:hover::after, .cert-list li a:focus-visible::after{ color:var(--gold); border-color:var(--gold-soft); }
 .modal p{ color:var(--paper-dim); }
 .modal-footnote{
   margin-top:20px;
