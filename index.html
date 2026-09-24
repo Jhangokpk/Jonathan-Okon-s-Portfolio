@@ -18,11 +18,40 @@
 <meta name="twitter:title" content="Jonathan Okon — HR & Administrative Support">
 <meta name="twitter:description" content="HR and Administrative Support professional based in Abuja, Nigeria. Recruitment coordination, project logistics, executive support.">
 <meta name="twitter:image" content="https://jonathan-okon-portfolio.netlify.app/assets/og-image.jpg">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%23c9a24a%22>J</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2214%22 fill=%22%230f0d0a%22/><text x=%2250%22 y=%2258%22 font-family=%22Georgia,serif%22 font-size=%2238%22 fill=%22%23c9a24a%22 text-anchor=%22middle%22>JO</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/jonathan-okon.jpg">
 <link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jonathan Okon",
+  "alternateName": "Pandaa",
+  "jobTitle": "HR & Administrative Support Professional",
+  "url": "https://jonathan-okon-portfolio.netlify.app/",
+  "image": "https://jonathan-okon-portfolio.netlify.app/assets/jonathan-okon.jpg",
+  "email": "mailto:jonathaneyookon@gmail.com",
+  "telephone": "+2348105277435",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Abuja",
+    "addressCountry": "NG"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "University of Abuja"
+  },
+  "knowsAbout": [
+    "Human Resources",
+    "Administrative Support",
+    "Recruitment Coordination",
+    "Project Coordination"
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -49,12 +78,12 @@
       <p class="hero-lede">I keep people operations organised — recruitment coordination, executive support, and the documentation that holds a growing team together.</p>
       <div class="hero-actions">
         <a class="btn btn-gold" href="#contact">Get in touch</a>
-        <a class="btn btn-line" href="assets/Jonathan-Okon-Resume.pdf" download>Download résumé</a>
+        <button type="button" class="btn btn-line" data-pdf-src="assets/Jonathan-Okon-Resume.pdf" data-pdf-title="Résumé" data-pdf-kicker="Jonathan Okon">View résumé</button>
       </div>
     </div>
     <div class="hero-portrait">
       <div class="portrait-frame">
-        <img src="assets/jonathan-okon.jpg" alt="Portrait of Jonathan Okon">
+        <img src="assets/jonathan-okon.jpg" alt="Portrait of Jonathan Okon" width="864" height="1152">
       </div>
     </div>
   </section>
@@ -107,7 +136,7 @@
       <span class="recommendation-name">Engr. Odinaka Agubata</span>
       <span class="recommendation-role">Project Engineer, EM-ONE Energy Solutions — onsite supervisor</span>
     </div>
-    <a class="recommendation-link" href="assets/Recommendation-Letter.pdf" download>Read the full letter</a>
+    <button type="button" class="recommendation-link" data-pdf-src="assets/Recommendation-Letter.pdf" data-pdf-title="Recommendation Letter" data-pdf-kicker="Engr. Odinaka Agubata · EM-ONE Energy Solutions">Read the full letter</button>
   </section>
 
   <!-- EXPERIENCE -->
@@ -234,7 +263,7 @@
         </li>
       </ul>
 
-      <form class="contact-form" id="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="company">
+      <form class="contact-form" id="contact-form" name="contact" method="POST" action="/thanks.html" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="company">
         <input type="hidden" name="form-name" value="contact">
         <p class="hidden-field"><label>Don't fill this out if you're human: <input name="company"></label></p>
 
@@ -327,14 +356,14 @@
   <p class="modal-kicker">HRCI</p>
   <h3 id="cred-hrci-title">HRCI Certifications</h3>
   <ul class="cert-list">
-    <li><a href="assets/certificates/administrative-human-resources-hrci.pdf" download>Administrative Human Resources</a></li>
-    <li><a href="assets/certificates/ethical-hr-leadership-hrci.pdf" download>Ethical HR Leadership</a></li>
-    <li><a href="assets/certificates/hr-strategic-workforce-planning-hrci.pdf" download>Human Resources Strategic Workforce Planning</a></li>
-    <li><a href="assets/certificates/introduction-to-employee-relations-hrci.pdf" download>Introduction to Employee Relations</a></li>
-    <li><a href="assets/certificates/recruiting-foundations-hrci.pdf" download>Recruiting Foundations</a></li>
-    <li><a href="assets/certificates/strategic-human-resources-hrci.pdf" download>Strategic Human Resources</a></li>
+    <li><button type="button" data-pdf-src="assets/certificates/administrative-human-resources-hrci.pdf" data-pdf-title="Administrative Human Resources" data-pdf-kicker="HRCI Certification">Administrative Human Resources</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/ethical-hr-leadership-hrci.pdf" data-pdf-title="Ethical HR Leadership" data-pdf-kicker="HRCI Certification">Ethical HR Leadership</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/hr-strategic-workforce-planning-hrci.pdf" data-pdf-title="Human Resources Strategic Workforce Planning" data-pdf-kicker="HRCI Certification">Human Resources Strategic Workforce Planning</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/introduction-to-employee-relations-hrci.pdf" data-pdf-title="Introduction to Employee Relations" data-pdf-kicker="HRCI Certification">Introduction to Employee Relations</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/recruiting-foundations-hrci.pdf" data-pdf-title="Recruiting Foundations" data-pdf-kicker="HRCI Certification">Recruiting Foundations</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/strategic-human-resources-hrci.pdf" data-pdf-title="Strategic Human Resources" data-pdf-kicker="HRCI Certification">Strategic Human Resources</button></li>
   </ul>
-  <p class="modal-footnote">Delivered via LinkedIn Learning, an HRCI-approved recertification credit provider. Click any course to download its certificate.</p>
+  <p class="modal-footnote">Delivered via LinkedIn Learning, an HRCI-approved recertification credit provider. Click any course to view its certificate.</p>
 </div>
 
 <div class="modal" id="cred-shrm" role="dialog" aria-modal="true" aria-labelledby="cred-shrm-title">
@@ -342,14 +371,14 @@
   <p class="modal-kicker">SHRM</p>
   <h3 id="cred-shrm-title">SHRM Certifications</h3>
   <ul class="cert-list">
-    <li><a href="assets/certificates/administrative-human-resources-shrm.pdf" download>Administrative Human Resources</a></li>
-    <li><a href="assets/certificates/ethical-hr-leadership-shrm.pdf" download>Ethical HR Leadership</a></li>
-    <li><a href="assets/certificates/hr-strategic-workforce-planning-shrm.pdf" download>Human Resources Strategic Workforce Planning</a></li>
-    <li><a href="assets/certificates/introduction-to-employee-relations-shrm.pdf" download>Introduction to Employee Relations</a></li>
-    <li><a href="assets/certificates/recruiting-foundations-shrm.pdf" download>Recruiting Foundations</a></li>
-    <li><a href="assets/certificates/strategic-human-resources-shrm.pdf" download>Strategic Human Resources</a></li>
+    <li><button type="button" data-pdf-src="assets/certificates/administrative-human-resources-shrm.pdf" data-pdf-title="Administrative Human Resources" data-pdf-kicker="SHRM Certification">Administrative Human Resources</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/ethical-hr-leadership-shrm.pdf" data-pdf-title="Ethical HR Leadership" data-pdf-kicker="SHRM Certification">Ethical HR Leadership</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/hr-strategic-workforce-planning-shrm.pdf" data-pdf-title="Human Resources Strategic Workforce Planning" data-pdf-kicker="SHRM Certification">Human Resources Strategic Workforce Planning</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/introduction-to-employee-relations-shrm.pdf" data-pdf-title="Introduction to Employee Relations" data-pdf-kicker="SHRM Certification">Introduction to Employee Relations</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/recruiting-foundations-shrm.pdf" data-pdf-title="Recruiting Foundations" data-pdf-kicker="SHRM Certification">Recruiting Foundations</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/strategic-human-resources-shrm.pdf" data-pdf-title="Strategic Human Resources" data-pdf-kicker="SHRM Certification">Strategic Human Resources</button></li>
   </ul>
-  <p class="modal-footnote">Delivered via LinkedIn Learning, an SHRM-approved recertification credit provider. Click any course to download its certificate.</p>
+  <p class="modal-footnote">Delivered via LinkedIn Learning, an SHRM-approved recertification credit provider. Click any course to view its certificate.</p>
 </div>
 
 <div class="modal" id="cred-pmi" role="dialog" aria-modal="true" aria-labelledby="cred-pmi-title">
@@ -357,16 +386,16 @@
   <p class="modal-kicker">PMI</p>
   <h3 id="cred-pmi-title">PMI Certifications</h3>
   <ul class="cert-list">
-    <li><a href="assets/certificates/communicating-with-executives-pmi.pdf" download>Communicating with Executives</a></li>
-    <li><a href="assets/certificates/executive-leadership-pmi.pdf" download>Executive Leadership</a></li>
-    <li><a href="assets/certificates/leadership-practical-skills-pmi.pdf" download>Leadership: Practical Skills</a></li>
-    <li><a href="assets/certificates/managing-multiple-projects-pmi.pdf" download>Managing Multiple Projects</a></li>
-    <li><a href="assets/certificates/project-management-skills-for-leaders-pmi.pdf" download>Project Management Skills for Leaders</a></li>
-    <li><a href="assets/certificates/skills-to-build-stronger-work-relationships-pmi.pdf" download>Skills to Build Stronger Work Relationships</a></li>
-    <li><a href="assets/certificates/strategic-project-risk-management-pmi.pdf" download>Strategic Project Risk Management</a></li>
-    <li><a href="assets/certificates/strategic-thinking-pmi.pdf" download>Strategic Thinking</a></li>
+    <li><button type="button" data-pdf-src="assets/certificates/communicating-with-executives-pmi.pdf" data-pdf-title="Communicating with Executives" data-pdf-kicker="PMI Certification">Communicating with Executives</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/executive-leadership-pmi.pdf" data-pdf-title="Executive Leadership" data-pdf-kicker="PMI Certification">Executive Leadership</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/leadership-practical-skills-pmi.pdf" data-pdf-title="Leadership: Practical Skills" data-pdf-kicker="PMI Certification">Leadership: Practical Skills</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/managing-multiple-projects-pmi.pdf" data-pdf-title="Managing Multiple Projects" data-pdf-kicker="PMI Certification">Managing Multiple Projects</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/project-management-skills-for-leaders-pmi.pdf" data-pdf-title="Project Management Skills for Leaders" data-pdf-kicker="PMI Certification">Project Management Skills for Leaders</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/skills-to-build-stronger-work-relationships-pmi.pdf" data-pdf-title="Skills to Build Stronger Work Relationships" data-pdf-kicker="PMI Certification">Skills to Build Stronger Work Relationships</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/strategic-project-risk-management-pmi.pdf" data-pdf-title="Strategic Project Risk Management" data-pdf-kicker="PMI Certification">Strategic Project Risk Management</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/strategic-thinking-pmi.pdf" data-pdf-title="Strategic Thinking" data-pdf-kicker="PMI Certification">Strategic Thinking</button></li>
   </ul>
-  <p class="modal-footnote">Delivered via LinkedIn Learning as a PMI Registered Education Provider, eligible for PDU credit. Click any course to download its certificate.</p>
+  <p class="modal-footnote">Delivered via LinkedIn Learning as a PMI Registered Education Provider, eligible for PDU credit. Click any course to view its certificate.</p>
 </div>
 
 <div class="modal" id="cred-nasba" role="dialog" aria-modal="true" aria-labelledby="cred-nasba-title">
@@ -374,10 +403,10 @@
   <p class="modal-kicker">NASBA</p>
   <h3 id="cred-nasba-title">NASBA Certifications</h3>
   <ul class="cert-list">
-    <li><a href="assets/certificates/project-management-technical-projects-nasba.pdf" download>Project Management: Technical Projects</a></li>
-    <li><a href="assets/certificates/strategic-project-risk-management-nasba.pdf" download>Strategic Project Risk Management</a></li>
+    <li><button type="button" data-pdf-src="assets/certificates/project-management-technical-projects-nasba.pdf" data-pdf-title="Project Management: Technical Projects" data-pdf-kicker="NASBA Certification">Project Management: Technical Projects</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/strategic-project-risk-management-nasba.pdf" data-pdf-title="Strategic Project Risk Management" data-pdf-kicker="NASBA Certification">Strategic Project Risk Management</button></li>
   </ul>
-  <p class="modal-footnote">Delivered via LinkedIn Learning as a NASBA CPE sponsor. Click either course to download its certificate.</p>
+  <p class="modal-footnote">Delivered via LinkedIn Learning as a NASBA CPE sponsor. Click either course to view its certificate.</p>
 </div>
 
 <div class="modal" id="cred-foundational" role="dialog" aria-modal="true" aria-labelledby="cred-foundational-title">
@@ -385,19 +414,19 @@
   <p class="modal-kicker">Foundational courses</p>
   <h3 id="cred-foundational-title">Foundational Certificates</h3>
   <ul class="cert-list">
-    <li><a href="assets/certificates/aspire-leaders-program.pdf" download>2026 Aspire Leaders Program</a></li>
-    <li><a href="assets/certificates/introduction-to-human-resource-management.pdf" download>Introduction to Human Resource Management</a></li>
-    <li><a href="assets/certificates/human-resource-management.pdf" download>Human Resource Management</a></li>
-    <li><a href="assets/certificates/basics-of-human-resource-management.pdf" download>Basics of Human Resource Management</a></li>
-    <li><a href="assets/certificates/crisis-communication.pdf" download>Crisis Communication</a></li>
-    <li><a href="assets/certificates/digital-and-social-media-marketing.pdf" download>Digital and Social Media Marketing</a></li>
-    <li><a href="assets/certificates/introduction-to-project-management.pdf" download>Introduction to Project Management</a></li>
-    <li><a href="assets/certificates/strategic-management.pdf" download>Strategic Management</a></li>
-    <li><a href="assets/certificates/strategic-project-management.pdf" download>Strategic Project Management</a></li>
-    <li><a href="assets/certificates/tech-recruitment-certified-professional.pdf" download>Tech Recruitment Certified Professional</a></li>
-    <li><a href="assets/certificates/mastering-communications-as-a-leader.pdf" download>Mastering Communications as a Leader</a></li>
+    <li><button type="button" data-pdf-src="assets/certificates/aspire-leaders-program.pdf" data-pdf-title="2026 Aspire Leaders Program" data-pdf-kicker="Aspire Institute">2026 Aspire Leaders Program</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/introduction-to-human-resource-management.pdf" data-pdf-title="Introduction to Human Resource Management" data-pdf-kicker="Saylor Academy">Introduction to Human Resource Management</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/human-resource-management.pdf" data-pdf-title="Human Resource Management" data-pdf-kicker="Saylor Academy">Human Resource Management</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/basics-of-human-resource-management.pdf" data-pdf-title="Basics of Human Resource Management" data-pdf-kicker="UniAthena">Basics of Human Resource Management</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/crisis-communication.pdf" data-pdf-title="Crisis Communication" data-pdf-kicker="Saylor Academy">Crisis Communication</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/digital-and-social-media-marketing.pdf" data-pdf-title="Digital and Social Media Marketing" data-pdf-kicker="atingi (GIZ)">Digital and Social Media Marketing</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/introduction-to-project-management.pdf" data-pdf-title="Introduction to Project Management" data-pdf-kicker="Saylor Academy">Introduction to Project Management</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/strategic-management.pdf" data-pdf-title="Strategic Management" data-pdf-kicker="Saylor Academy">Strategic Management</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/strategic-project-management.pdf" data-pdf-title="Strategic Project Management" data-pdf-kicker="Saylor Academy">Strategic Project Management</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/tech-recruitment-certified-professional.pdf" data-pdf-title="Tech Recruitment Certified Professional" data-pdf-kicker="SkillPanel">Tech Recruitment Certified Professional</button></li>
+    <li><button type="button" data-pdf-src="assets/certificates/mastering-communications-as-a-leader.pdf" data-pdf-title="Mastering Communications as a Leader" data-pdf-kicker="LinkedIn Learning">Mastering Communications as a Leader</button></li>
   </ul>
-  <p class="modal-footnote">Aspire Institute is Harvard-affiliated (co-founded by HBS professors Tarun Khanna and Karim Lakhani); the rest are via Saylor Academy, UniAthena, atingi (GIZ), SkillPanel, and LinkedIn Learning. Click any course to download its certificate.</p>
+  <p class="modal-footnote">Aspire Institute is Harvard-affiliated (co-founded by HBS professors Tarun Khanna and Karim Lakhani); the rest are via Saylor Academy, UniAthena, atingi (GIZ), SkillPanel, and LinkedIn Learning. Click any course to view its certificate.</p>
 </div>
 
 <div class="modal" id="cred-education" role="dialog" aria-modal="true" aria-labelledby="cred-education-title">
@@ -405,6 +434,20 @@
   <p class="modal-kicker">Education</p>
   <h3 id="cred-education-title">B.Eng. Electrical Engineering</h3>
   <p>University of Abuja (Yakubu Gowon University), Nigeria — completed 2025.</p>
+</div>
+
+<!-- Reusable document viewer modal (certificates, résumé, recommendation letter) -->
+<div class="modal modal-pdf" id="pdf-modal" role="dialog" aria-modal="true" aria-labelledby="pdf-modal-title">
+  <button class="modal-close" data-close-modal aria-label="Close">&times;</button>
+  <p class="modal-kicker" id="pdf-modal-kicker">Document</p>
+  <h3 id="pdf-modal-title">Loading…</h3>
+  <div class="pdf-frame-wrap">
+    <iframe id="pdf-frame" title="Document preview" src="" loading="lazy"></iframe>
+  </div>
+  <div class="pdf-modal-actions">
+    <a class="btn btn-gold" id="pdf-download" href="#" download>Download PDF</a>
+    <p class="pdf-fallback-note">Preview not loading? The download link above opens the same file directly.</p>
+  </div>
 </div>
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
