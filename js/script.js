@@ -157,4 +157,16 @@
       // No preventDefault here — the form submits normally to Netlify.
     });
   }
+
+  /* After Netlify processes the submission it redirects back to
+     "/?sent=true#contact" — this is what shows the confirmation, since it
+     doesn't depend on a separate success page existing on the deploy. */
+  if (window.location.search.indexOf("sent=true") !== -1) {
+    if (status) {
+      status.textContent = "Thanks — your message is on its way. I'll get back to you soon.";
+      status.classList.remove("is-error");
+    }
+    var cleanUrl = window.location.pathname + window.location.hash;
+    window.history.replaceState(null, "", cleanUrl);
+  }
 })();

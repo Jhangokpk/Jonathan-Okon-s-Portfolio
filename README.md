@@ -5,7 +5,6 @@ A single-page portfolio site. Plain HTML/CSS/JS, no build step, no dependencies.
 ```
 portfolio/
 ├── index.html
-├── thanks.html                    (shown after a successful form submission)
 ├── robots.txt
 ├── sitemap.xml
 ├── css/style.css
@@ -33,7 +32,7 @@ One thing worth knowing: some browsers (mainly older mobile Safari) render inlin
 - **Email** — a `mailto:` link. Opens the visitor's own mail app, addressed to Jonathan.
 - **WhatsApp** — a `wa.me` link with a pre-filled message ("Hello Jonathan, my name is ____..."). It opens WhatsApp with that text already in the box — WhatsApp itself never allows a link to send automatically, so the visitor still taps Send.
 - **Call** — a `tel:` link, dials on mobile / opens the desktop calling app.
-- **Message form** — wired to **Netlify Forms**, with Netlify's built-in reCAPTCHA (no Google account needed — Netlify provides the keys automatically once it detects `data-netlify-recaptcha="true"` in the deployed HTML). It submits as a normal form POST (not AJAX) — Netlify's reCAPTCHA verification is unreliable over fetch/AJAX, so this deliberately lets the browser do a real submit, then redirects to a branded `thanks.html` page. It only works once the site is deployed on Netlify (not on `file://`, not on GitHub Pages). One-time setup after your first deploy:
+- **Message form** — wired to **Netlify Forms**, with Netlify's built-in reCAPTCHA (no Google account needed — Netlify provides the keys automatically once it detects `data-netlify-recaptcha="true"` in the deployed HTML). It submits as a normal form POST (not AJAX) — Netlify's reCAPTCHA verification is unreliable over fetch/AJAX, so this deliberately lets the browser do a real submit. It redirects back to `/?sent=true#contact` — the homepage itself, not a separate success page — and a small script on load detects `sent=true`, shows "Thanks — your message is on its way" in place of the form, and cleans the URL back up. (An earlier version pointed at a dedicated `thanks.html`, but that 404'd on the live deploy, so this version depends on nothing but the homepage, which is guaranteed to exist.) It only works once the site is deployed on Netlify (not on `file://`, not on GitHub Pages). One-time setup after your first deploy:
   1. Netlify dashboard → your site → **Forms**. You should see a form named `contact` appear after the first deploy. If it's not there, trigger a fresh deploy (**Deploys → Trigger deploy → Clear cache and deploy site**) — Netlify only scans the HTML for forms at deploy time.
   2. **Settings → Forms → Form notifications → Add notification → Email notification**.
   3. Set the "to" address to `jonathaneyookon@gmail.com` and save.
