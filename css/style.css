@@ -74,6 +74,7 @@ ul{ margin:0; padding:0; list-style:none; }
   transition:color 0.2s ease;
 }
 .site-nav nav a:hover, .site-nav nav a:focus-visible{ color:var(--paper); }
+.site-nav nav a.active{ color:var(--gold); }
 
 /* ==========================================================
    Layout helpers
@@ -251,11 +252,15 @@ section h2{
 .recommendation-link{
   display:inline-block;
   margin-top:20px;
+  background:none;
+  border:none;
+  border-bottom:1px solid var(--gold-soft);
   color:var(--gold);
+  font-family:inherit;
   font-size:0.88rem;
   text-decoration:none;
-  border-bottom:1px solid var(--gold-soft);
-  padding-bottom:2px;
+  padding:0 0 2px;
+  cursor:pointer;
 }
 .recommendation-link:hover, .recommendation-link:focus-visible{ color:#dcb75e; }
 
@@ -493,26 +498,64 @@ section h2{
 }
 .modal ul li:last-child{ border-bottom:none; }
 .cert-list li{ padding:0; }
-.cert-list li a{
+.cert-list li button{
   display:flex;
+  width:100%;
   align-items:center;
   justify-content:space-between;
   gap:12px;
   padding:12px 2px;
   color:var(--paper);
   text-decoration:none;
+  background:none;
+  border:none;
+  font-family:inherit;
+  font-size:0.95rem;
+  text-align:left;
+  cursor:pointer;
 }
-.cert-list li a::after{
-  content:"Download";
+.cert-list li button::after{
+  content:"View";
   flex:none;
   font-size:0.76rem;
   color:var(--gold-soft);
   border:1px solid var(--line);
   padding:3px 8px;
 }
-.cert-list li a:hover, .cert-list li a:focus-visible{ color:var(--gold); }
-.cert-list li a:hover::after, .cert-list li a:focus-visible::after{ color:var(--gold); border-color:var(--gold-soft); }
+.cert-list li button:hover, .cert-list li button:focus-visible{ color:var(--gold); }
+.cert-list li button:hover::after, .cert-list li button:focus-visible::after{ color:var(--gold); border-color:var(--gold-soft); }
 .modal p{ color:var(--paper-dim); }
+
+/* Document viewer modal (certificates, résumé, recommendation letter) */
+.modal-pdf{
+  width:min(760px, 94vw);
+  max-height:90vh;
+}
+.pdf-frame-wrap{
+  margin:18px 0 20px;
+  height:min(60vh, 560px);
+  background:#e8e4da;
+  border:1px solid var(--line);
+}
+#pdf-frame{
+  width:100%;
+  height:100%;
+  border:0;
+}
+.pdf-modal-actions{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.pdf-fallback-note{
+  margin:0;
+  font-size:0.8rem;
+  color:#6f6551;
+}
+@media (max-width: 600px){
+  .pdf-frame-wrap{ height:min(50vh, 420px); }
+}
 .modal-footnote{
   margin-top:20px;
   padding-top:16px;
@@ -539,4 +582,35 @@ section h2{
 }
 @media (max-width: 480px){
   .credential-grid{ grid-template-columns:1fr; }
+}
+
+/* ==========================================================
+   Print
+   ========================================================== */
+@media print{
+  .grain, .site-nav, .modal-backdrop, .modal, .contact-form,
+  .hero-actions, .recommendation-link, .footer-note{ display:none !important; }
+
+  body{ background:#fff; color:#111; }
+  a{ color:#111; text-decoration:underline; }
+
+  section{ padding:24px 0; max-width:100%; }
+  h1, h2, h3{ color:#111; }
+  .hero-lede, .about-body p, .timeline-summary, .timeline-org,
+  .competency-col ul li, .contact-value, .credentials-lede{ color:#333; }
+
+  .hero{ grid-template-columns:1fr; }
+  .portrait-frame{ border-color:#999; width:140px; }
+  .recommendation{ border-color:#ccc; }
+  .recommendation blockquote p{ color:#111; }
+
+  .credential-tile{ border:1px solid #ccc; background:#fff; }
+  .credential-name{ color:#111; }
+  .credential-count{ color:#555; }
+
+  .timeline, .credential-grid, .contact-list{ border-color:#ccc; }
+  .timeline-item{ border-color:#ccc; }
+  .timeline-link{ display:none; }
+
+  .site-footer{ color:#555; }
 }
