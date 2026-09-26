@@ -214,29 +214,39 @@ section h2{
 .competency-col ul li:last-child{ border-bottom:none; }
 
 /* ==========================================================
-   Recommendation pull-quote
+   Recommendation pull-quotes
    ========================================================== */
 .recommendation{
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
-  text-align:center;
   padding-top:clamp(56px,8vw,88px);
   padding-bottom:clamp(56px,8vw,88px);
 }
+.recommendation-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(32px,5vw,64px);
+  text-align:center;
+}
+.recommendation-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
 .recommendation blockquote{
   margin:0 auto;
-  max-width:64ch;
+  max-width:48ch;
 }
 .recommendation blockquote p{
   font-family:var(--serif);
   font-style:italic;
-  font-size:clamp(1.25rem,2.6vw,1.7rem);
+  font-size:clamp(1.1rem,2vw,1.35rem);
   line-height:1.45;
   color:var(--paper);
   margin:0;
 }
 .recommendation-attribution{
-  margin-top:28px;
+  margin-top:24px;
   display:flex;
   flex-direction:column;
   gap:4px;
@@ -263,6 +273,17 @@ section h2{
   cursor:pointer;
 }
 .recommendation-link:hover, .recommendation-link:focus-visible{ color:#dcb75e; }
+
+@media (max-width: 820px){
+  .recommendation-grid{
+    grid-template-columns:1fr;
+    gap:48px;
+  }
+  .recommendation-card:first-child{
+    padding-bottom:48px;
+    border-bottom:1px solid var(--line);
+  }
+}
 
 /* ==========================================================
    Experience timeline
