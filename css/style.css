@@ -474,9 +474,10 @@ section h2{
 
 .modal{
   position:fixed;
-  top:50%; left:50%;
-  transform:translate(-50%,-48%);
+  top:0; right:0; bottom:0; left:0;
+  margin:auto;
   width:min(560px, 90vw);
+  height:fit-content;
   max-height:82vh;
   overflow-y:auto;
   background:var(--panel);
@@ -484,11 +485,10 @@ section h2{
   padding:clamp(28px,4vw,44px);
   z-index:60;
   opacity:0; visibility:hidden;
-  transition:opacity 0.25s ease, transform 0.25s ease;
+  transition:opacity 0.2s ease;
 }
 .modal.is-open{
   opacity:1; visibility:visible;
-  transform:translate(-50%,-50%);
 }
 .modal-close{
   position:absolute; top:16px; right:16px;
