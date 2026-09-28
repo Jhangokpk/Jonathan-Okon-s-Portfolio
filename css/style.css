@@ -549,33 +549,34 @@ section h2{
 
 /* Document viewer modal (certificates, résumé, recommendation letter) */
 .modal-pdf{
-  width:min(760px, 94vw);
-  max-height:90vh;
+  width:min(480px, 94vw);
 }
-.pdf-frame-wrap{
-  margin:18px 0 20px;
-  height:min(60vh, 560px);
-  background:#e8e4da;
+.pdf-preview-card{
+  margin:22px 0 26px;
+  padding:32px 20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+  text-align:center;
+  background:var(--panel-2);
   border:1px solid var(--line);
 }
-#pdf-frame{
-  width:100%;
-  height:100%;
-  border:0;
+.pdf-preview-icon{
+  width:40px; height:40px;
+  color:var(--gold-soft);
+}
+.pdf-preview-icon svg{ width:100%; height:100%; }
+.pdf-preview-note{
+  margin:0;
+  font-size:0.85rem;
+  color:var(--paper-dim);
 }
 .pdf-modal-actions{
   display:flex;
   align-items:center;
-  gap:16px;
+  gap:14px;
   flex-wrap:wrap;
-}
-.pdf-fallback-note{
-  margin:0;
-  font-size:0.8rem;
-  color:#6f6551;
-}
-@media (max-width: 600px){
-  .pdf-frame-wrap{ height:min(50vh, 420px); }
 }
 .modal-footnote{
   margin-top:20px;

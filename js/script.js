@@ -25,18 +25,12 @@
 
   function closeModal() {
     if (!activeModal) return;
-    var closingPdf = activeModal.id === "pdf-modal";
     activeModal.classList.remove("is-open");
     backdrop.classList.remove("is-open");
     document.body.style.overflow = "";
     activeModal = null;
     if (lastFocused && typeof lastFocused.focus === "function") {
       lastFocused.focus();
-    }
-    if (closingPdf) {
-      // Stop the embedded PDF from continuing to load/play in the background.
-      var frame = document.getElementById("pdf-frame");
-      if (frame) setTimeout(function () { frame.src = ""; }, 300);
     }
   }
 
@@ -86,11 +80,16 @@
   });
 
   /* ---- Document viewer: certificates, résumé, recommendation letter.
-     Clicking any [data-pdf-src] trigger opens an embedded preview with a
-     download button, instead of downloading immediately. ---- */
-  var pdfFrame = document.getElementById("pdf-frame");
+     Clicking any [data-pdf-src] trigger opens a dialog with an "Open
+     document" link (new tab, browser's own PDF viewer) and a separate
+     download button — instead of downloading immediately. An embedded
+     <iframe> preview was tried first, but Android Chrome has no inline
+     PDF viewer and blocks framed downloads outright ("This content is
+     blocked"), so a new-tab link is the only approach that's reliable
+     across both desktop and mobile browsers. ---- */
   var pdfTitle = document.getElementById("pdf-modal-title");
   var pdfKicker = document.getElementById("pdf-modal-kicker");
+  var pdfOpen = document.getElementById("pdf-open");
   var pdfDownload = document.getElementById("pdf-download");
 
   document.querySelectorAll("[data-pdf-src]").forEach(function (el) {
@@ -102,7 +101,7 @@
       pdfTitle.textContent = title;
       pdfKicker.textContent = kicker;
       pdfKicker.style.display = kicker ? "" : "none";
-      pdfFrame.src = src;
+      pdfOpen.href = src;
       pdfDownload.href = src;
 
       openModal("pdf-modal");
