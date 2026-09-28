@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jonathan-okon-portfolio.netlify.app/sitemap.xml
+Sitemap: https://jonathan-okon.netlify.app/sitemap.xml
