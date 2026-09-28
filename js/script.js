@@ -79,32 +79,19 @@
     trapFocus(e);
   });
 
-  /* ---- Document viewer: certificates, résumé, recommendation letter.
-     Clicking any [data-pdf-src] trigger opens a dialog with an "Open
-     document" link (new tab, browser's own PDF viewer) and a separate
-     download button — instead of downloading immediately. An embedded
-     <iframe> preview was tried first, but Android Chrome has no inline
-     PDF viewer and blocks framed downloads outright ("This content is
-     blocked"), so a new-tab link is the only approach that's reliable
-     across both desktop and mobile browsers. ---- */
-  var pdfTitle = document.getElementById("pdf-modal-title");
-  var pdfKicker = document.getElementById("pdf-modal-kicker");
-  var pdfOpen = document.getElementById("pdf-open");
-  var pdfDownload = document.getElementById("pdf-download");
-
+  /* ---- Documents (certificates, résumé, recommendation letters).
+     Clicking any [data-pdf-src] trigger opens the PDF straight away in a
+     new tab, using the browser's own built-in PDF reader (which has its own
+     download button in its toolbar). ---- */
   document.querySelectorAll("[data-pdf-src]").forEach(function (el) {
     el.addEventListener("click", function () {
-      var src = el.getAttribute("data-pdf-src");
-      var title = el.getAttribute("data-pdf-title") || "Document";
-      var kicker = el.getAttribute("data-pdf-kicker") || "";
-
-      pdfTitle.textContent = title;
-      pdfKicker.textContent = kicker;
-      pdfKicker.style.display = kicker ? "" : "none";
-      pdfOpen.href = src;
-      pdfDownload.href = src;
-
-      openModal("pdf-modal");
+      var link = document.createElement("a");
+      link.href = el.getAttribute("data-pdf-src");
+      link.target = "_blank";
+      link.rel = "noopener";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     });
   });
 

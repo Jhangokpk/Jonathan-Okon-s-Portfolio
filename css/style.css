@@ -547,37 +547,6 @@ section h2{
 .cert-list li button:hover::after, .cert-list li button:focus-visible::after{ color:var(--gold); border-color:var(--gold-soft); }
 .modal p{ color:var(--paper-dim); }
 
-/* Document viewer modal (certificates, résumé, recommendation letter) */
-.modal-pdf{
-  width:min(480px, 94vw);
-}
-.pdf-preview-card{
-  margin:22px 0 26px;
-  padding:32px 20px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:14px;
-  text-align:center;
-  background:var(--panel-2);
-  border:1px solid var(--line);
-}
-.pdf-preview-icon{
-  width:40px; height:40px;
-  color:var(--gold-soft);
-}
-.pdf-preview-icon svg{ width:100%; height:100%; }
-.pdf-preview-note{
-  margin:0;
-  font-size:0.85rem;
-  color:var(--paper-dim);
-}
-.pdf-modal-actions{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  flex-wrap:wrap;
-}
 .modal-footnote{
   margin-top:20px;
   padding-top:16px;
