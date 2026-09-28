@@ -454,6 +454,21 @@
 </div>
 
 
+<!-- Document viewer: used on browsers that can display PDFs inline.
+     Browsers that can't get the PDF opened in a new tab instead (see js/script.js). -->
+<div class="modal modal-pdf" id="pdf-modal" role="dialog" aria-modal="true" aria-labelledby="pdf-modal-title">
+  <button class="modal-close" data-close-modal aria-label="Close">&times;</button>
+  <p class="modal-kicker" id="pdf-modal-kicker">Document</p>
+  <h3 id="pdf-modal-title">Loading…</h3>
+  <div class="pdf-frame-wrap">
+    <iframe id="pdf-frame" title="Document preview" src=""></iframe>
+  </div>
+  <div class="pdf-modal-actions">
+    <a class="btn btn-gold" id="pdf-download" href="#" download>Download PDF</a>
+    <a class="btn btn-line" id="pdf-newtab" href="#" target="_blank" rel="noopener">Open in new tab</a>
+  </div>
+</div>
+
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="js/script.js"></script>
 </body>

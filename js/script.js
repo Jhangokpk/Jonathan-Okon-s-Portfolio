@@ -25,12 +25,17 @@
 
   function closeModal() {
     if (!activeModal) return;
+    var closingPdf = activeModal.id === "pdf-modal";
     activeModal.classList.remove("is-open");
     backdrop.classList.remove("is-open");
     document.body.style.overflow = "";
     activeModal = null;
     if (lastFocused && typeof lastFocused.focus === "function") {
       lastFocused.focus();
+    }
+    if (closingPdf) {
+      var frame = document.getElementById("pdf-frame");
+      if (frame) setTimeout(function () { frame.src = ""; }, 300);
     }
   }
 
@@ -80,18 +85,59 @@
   });
 
   /* ---- Documents (certificates, résumé, recommendation letters).
-     Clicking any [data-pdf-src] trigger opens the PDF straight away in a
-     new tab, using the browser's own built-in PDF reader (which has its own
-     download button in its toolbar). ---- */
+     Capability check: if the browser can display PDFs inline, open the
+     in-page viewer dialog (preview + download button). If it can't
+     (e.g. Android Chrome, which has no inline PDF viewer and blocks framed
+     downloads), open the PDF straight in a new tab instead. ---- */
+  function canInlinePdf() {
+    // iOS/iPadOS can technically embed PDFs but only shows page one and
+    // doesn't scroll reliably, so treat it as "can't" and use a new tab.
+    var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    if (isIOS) return false;
+
+    // Modern browsers report this directly (Chrome 94+, Firefox 99+, Safari 16.4+).
+    if (typeof navigator.pdfViewerEnabled === "boolean") {
+      return navigator.pdfViewerEnabled;
+    }
+    // Older browsers: fall back to checking for a registered PDF handler.
+    return !!(navigator.mimeTypes && navigator.mimeTypes["application/pdf"]);
+  }
+
+  function openInNewTab(src) {
+    var link = document.createElement("a");
+    link.href = src;
+    link.target = "_blank";
+    link.rel = "noopener";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  var pdfFrame = document.getElementById("pdf-frame");
+  var pdfTitle = document.getElementById("pdf-modal-title");
+  var pdfKicker = document.getElementById("pdf-modal-kicker");
+  var pdfDownload = document.getElementById("pdf-download");
+  var pdfNewTab = document.getElementById("pdf-newtab");
+
   document.querySelectorAll("[data-pdf-src]").forEach(function (el) {
     el.addEventListener("click", function () {
-      var link = document.createElement("a");
-      link.href = el.getAttribute("data-pdf-src");
-      link.target = "_blank";
-      link.rel = "noopener";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      var src = el.getAttribute("data-pdf-src");
+
+      if (!canInlinePdf()) {
+        openInNewTab(src);
+        return;
+      }
+
+      var title = el.getAttribute("data-pdf-title") || "Document";
+      var kicker = el.getAttribute("data-pdf-kicker") || "";
+      pdfTitle.textContent = title;
+      pdfKicker.textContent = kicker;
+      pdfKicker.style.display = kicker ? "" : "none";
+      pdfFrame.src = src;
+      pdfDownload.href = src;
+      pdfNewTab.href = src;
+      openModal("pdf-modal");
     });
   });
 

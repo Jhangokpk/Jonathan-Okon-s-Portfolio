@@ -547,6 +547,28 @@ section h2{
 .cert-list li button:hover::after, .cert-list li button:focus-visible::after{ color:var(--gold); border-color:var(--gold-soft); }
 .modal p{ color:var(--paper-dim); }
 
+/* Document viewer modal (inline-PDF-capable browsers only) */
+.modal-pdf{
+  width:min(760px, 94vw);
+  max-height:90vh;
+}
+.pdf-frame-wrap{
+  margin:18px 0 20px;
+  height:min(60vh, 560px);
+  background:#e8e4da;
+  border:1px solid var(--line);
+}
+#pdf-frame{
+  width:100%;
+  height:100%;
+  border:0;
+}
+.pdf-modal-actions{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
 .modal-footnote{
   margin-top:20px;
   padding-top:16px;
