@@ -97,9 +97,9 @@ section h2{
    ========================================================== */
 .hero{
   display:grid;
-  grid-template-columns:1.15fr 0.85fr;
-  align-items:center;
-  gap:clamp(32px,6vw,64px);
+  grid-template-columns:1fr auto;
+  align-items:start;
+  gap:clamp(24px,4vw,48px);
   padding-top:clamp(56px,9vw,96px);
 }
 .hero-kicker{
@@ -128,23 +128,16 @@ section h2{
 }
 .hero-actions{ display:flex; gap:16px; flex-wrap:wrap; }
 
-.hero-portrait{ display:flex; justify-content:center; }
+.hero-portrait{ display:flex; justify-content:flex-end; padding-top:4px; }
 .portrait-frame{
-  width:min(320px,80vw);
+  width:148px;
   aspect-ratio:3/4;
-  padding:10px;
   border:1px solid var(--gold-soft);
   background:var(--panel);
-  position:relative;
-}
-.portrait-frame::after{
-  content:"";
-  position:absolute; inset:6px;
-  border:1px solid var(--line);
-  pointer-events:none;
+  line-height:0;
 }
 .portrait-frame img{
-  width:100%; height:100%; object-fit:cover;
+  width:100%; height:100%; object-fit:cover; display:block;
   filter:grayscale(0.15) contrast(1.02);
 }
 
@@ -584,8 +577,8 @@ section h2{
    ========================================================== */
 @media (max-width: 820px){
   .hero{ grid-template-columns:1fr; text-align:left; }
-  .hero-portrait{ order:-1; margin-bottom:8px; justify-content:flex-start; }
-  .portrait-frame{ width:180px; }
+  .hero-portrait{ order:-1; margin-bottom:12px; justify-content:flex-start; padding-top:0; }
+  .portrait-frame{ width:120px; }
   .about-grid{ grid-template-columns:1fr; }
   .competencies{ grid-template-columns:1fr; gap:24px; }
   .timeline-item{ grid-template-columns:1fr; }
@@ -613,7 +606,7 @@ section h2{
   .competency-col ul li, .contact-value, .credentials-lede{ color:#333; }
 
   .hero{ grid-template-columns:1fr; }
-  .portrait-frame{ border-color:#999; width:140px; }
+  .portrait-frame{ border-color:#999; width:110px; }
   .recommendation{ border-color:#ccc; }
   .recommendation blockquote p{ color:#111; }
 
